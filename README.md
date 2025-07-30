@@ -1,6 +1,10 @@
 # Twitter Better Person Extension
 
-A Chrome extension that replaces Twitter's like button heart icon with "made me better person" text.
+A Chrome extension that replaces Twitter's like button heart icon with "made me a better person".
+
+Thanks @benhylak for inspiration: https://x.com/benhylak/status/1950623353234247929
+
+Very janky, pull requests welcome. 
 
 ## Installation
 
