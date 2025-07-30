@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Twitter Better Person",
+  "version": "1.0",
+  "description": "Changes Twitter like buttons to 'made me better person' buttons",
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://twitter.com/*", "https://x.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    }
+  ]
+}

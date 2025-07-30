@@ -1,0 +1,77 @@
+/* Styling for the "made me better person" text */
+.better-person-text {
+  font-size: 11px;
+  font-weight: 400;
+  color: rgb(83, 100, 113);
+  white-space: normal;
+  word-wrap: break-word;
+  transition: opacity 0.3s ease-in-out;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  display: block;
+  line-height: 1.1;
+  text-align: center;
+  max-width: 60px;
+}
+
+/* Subtle pulse animation for liked state */
+[data-testid="unlike"] .better-person-text {
+  animation: subtle-pulse 2s ease-in-out infinite;
+  color: #f91880 !important; /* Twitter red */
+  font-weight: 400 !important;
+}
+
+@keyframes subtle-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Reset button container */
+.better-person-modified {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 8px !important;
+  margin: 0 12px 0 0 !important; /* keep default Twitter spacing */
+}
+
+/* Button styling */
+[role="button"]:has(.better-person-text) {
+  border-radius: 9999px !important;
+  padding: 8px !important;
+  background: transparent !important;
+  transition: background-color 0.2s ease-in-out;
+}
+
+[role="button"]:has(.better-person-text):hover {
+  background-color: rgba(83, 100, 113, 0.1) !important;
+}
+
+/* Make sure the button looks cohesive with Twitter's design */
+[data-testid="like"].better-person-modified,
+[data-testid="unlike"].better-person-modified {
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  outline: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Ensure proper spacing in tweet action bar */
+div[role="group"] [data-testid="like"].better-person-modified,
+div[role="group"] [data-testid="unlike"].better-person-modified {
+  /* Preserve default flex behaviour */
+  flex-shrink: 0;
+}
+
+/* Hide original heart icon */
+.better-person-modified svg {
+  display: none !important;
+}
